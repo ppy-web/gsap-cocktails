@@ -1,7 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
+import { useRef } from "react";
+("react-responsive");
 const Hero = () => {
+  const videoRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   useGSAP(() => {
     const heroSplit = new SplitText(".title", { type: "chars, words" });
     const paraSplit = new SplitText(".subtitle", { type: "lines" });
@@ -30,10 +36,26 @@ const Hero = () => {
         },
       })
       .to(".right-leaf", { y: 200 }, 0)
-      .to(".left-leaf", { y: -200 }, 0)
+      .to(".left-leaf", { y: -200 }, 0);
+    const startValue = isMobile ? "top 50%" : "center 60%";
+    const endValue = isMobile ? "120% top" : "bottom top";
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "video",
+        start: startValue,
+        end: endValue,
+        scrub: true,
+        pin: true,
+      },
+    });
+    videoRef.current.onloadedmetadata = () => {
+      tl.to(videoRef.current, {
+        currentTime: videoRef.current.duration,
+      });
+    };
   }, []);
   return (
-    <div>
+    <div >
       <section id="hero" className="noisy">
         <h1 className="title">Mao Tai</h1>
 
@@ -58,17 +80,24 @@ const Hero = () => {
             </div>
             <div className="view-cocktails">
               <p className="subtitle">
-                Cocktails use
-                spirits (such as whiskey, vodka, gin, etc.) as the base, and are
-                blended with auxiliary ingredients like fruit juice, syrup, soda
-                water, and herbs, often garnished with lemon slices, mint
-                leaves, or cherries. 
+                Cocktails use spirits (such as whiskey, vodka, gin, etc.) as the
+                base, and are blended with auxiliary ingredients like fruit
+                juice, syrup, soda water, and herbs, often garnished with lemon
+                slices, mint leaves, or cherries.
               </p>
               <a href="#cocktails"></a>
             </div>
           </div>
         </div>
       </section>
+      <div className="video absolute inset-0">
+        <video
+          ref={videoRef}
+          src="/videos/output.mp4"
+          muted
+          preload="true"
+        />
+      </div>
     </div>
   );
 };

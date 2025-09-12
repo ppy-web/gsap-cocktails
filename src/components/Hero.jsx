@@ -55,17 +55,25 @@ const Hero = () => {
     };
   }, []);
   return (
-    <div >
-      <section id="hero" className="noisy">
+    <div>
+      <section
+        id="hero"
+        className="noisy"
+        style={{
+          backgroundImage: `url(${
+            import.meta.env.VITE_BASE_URL
+          }/images/noise.png`,
+        }}
+      >
         <h1 className="title">Mao Tai</h1>
 
         <img
-          src="/images/hero-left-leaf.png"
+          src={`${import.meta.env.VITE_BASE_URL}images/hero-left-leaf.png`}
           alt="left-leaf"
           className="left-leaf"
         />
         <img
-          src="/images/hero-right-leaf.png"
+          src={`${import.meta.env.VITE_BASE_URL}images/hero-right-leaf.png`}
           alt="right-leaf"
           className="right-leaf"
         />
@@ -93,7 +101,7 @@ const Hero = () => {
       <div className="video absolute inset-0">
         <video
           ref={videoRef}
-          src="/videos/output.mp4"
+          src={`${import.meta.env.VITE_BASE_URL}videos/output.mp4`}
           muted
           preload="true"
         />

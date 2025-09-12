@@ -17,7 +17,7 @@ const Navbar = () => {
       },
       {
         backgroundColor: "#00000050",
-        backgroundFilter: "blur(15px)",
+        backdropFilter: "blur(15px)",
         duration: 1,
         ease: "power3.inOut",
       }
@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav>
       <div>
         <a href="#hero" className="flex items-center gap-2">
-          <img src="/images/logo.png" alt="logo" />
+          <img src={`${import.meta.env.VITE_BASE_URL}/images/logo.png`} alt="logo" />
           <p>Velvet Pour</p>
         </a>
         <ul>

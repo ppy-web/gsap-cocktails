@@ -21,14 +21,14 @@ const Cocktails = () => {
   });
 
   return (
-    <section id="cocktails" className="noisy">
+    <section id="cocktails" className="noisy"  style={{ backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/images/noise.png`}}>
       <img
-        src="/images/cocktail-left-leaf.png"
+        src={`${import.meta.env.VITE_BASE_URL}/images/cocktail-left-leaf.png`}
         alt="left-leaf"
         id="c-left-leaf"
       />
       <img
-        src="/images/cocktail-right-leaf.png"
+        src={`${import.meta.env.VITE_BASE_URL}/images/cocktail-right-leaf.png`}
         alt="right-leaf"
         id="c-right-leaf"
       />

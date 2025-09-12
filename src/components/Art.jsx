@@ -26,7 +26,7 @@ const Art = () => {
         scale: 1.3,
         maskPosition: "center center",
         maskSize: "400%",
-        duration: 1,
+        duration: 5,
         ease: "power1.inOut",
       })
       .to("#masked-content", {
@@ -44,16 +44,24 @@ const Art = () => {
           <ul className="space-y-4 will-fade">
             {goodLists.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
-                <img src="/images/check.png" alt="check" />
+                <img
+                  src={`${import.meta.env.VITE_BASE_URL}/images/check.png`}
+                  alt="check"
+                />
                 <p>{item}</p>
               </li>
             ))}
           </ul>
           <div className="cocktail-img">
             <img
-              src="/images/under-img.jpg"
+              src={`${import.meta.env.VITE_BASE_URL}images/under-img.jpg`}
               alt="cocktails"
               className="abs-center masked-img size-full abject-contain"
+              style={{
+                maskImage: `url(${
+                  import.meta.env.VITE_BASE_URL
+                }/images/mask-img.png`,
+              }}
             />
           </div>
           <ul className="space-y-4 will-fade">

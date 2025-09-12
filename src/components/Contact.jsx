@@ -29,23 +29,28 @@ const Contact = () => {
         repate: -1,
         yoyo: true,
         ease: "power2.inOut",
-      }).to("#f-left-leaf", {
-        duration: 1,
-        repate: -1,
-        y: "-50",
-        ease: "power2.inOut",
-        yoyo: true,
-      }, '<');
+      })
+      .to(
+        "#f-left-leaf",
+        {
+          duration: 1,
+          repate: -1,
+          y: "-50",
+          ease: "power2.inOut",
+          yoyo: true,
+        },
+        "<"
+      );
   });
   return (
     <footer id="contact">
       <img
-        src="/images/footer-right-leaf.png"
+        src={`${import.meta.env.VITE_BASE_URL}images/footer-right-leaf.png`}
         alt="leaf-right"
         id="f-right-leaf"
       />
       <img
-        src="/images/footer-left-leaf.png"
+        src={`${import.meta.env.VITE_BASE_URL}images/footer-left-leaf.png`}
         alt="leaf-left"
         id="f-left-leaf"
       />

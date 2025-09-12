@@ -18,12 +18,16 @@ const About = () => {
         stagger: 0.02,
         ease: "expo.out",
       })
-      .from(".top-grid div, .bottom-grid div", {
-        opacity: 0,
-        duration: 1,
-        ease: "power1.inOut",
-        stagger: 0.04,
-      }, "-=1");
+      .from(
+        ".top-grid div, .bottom-grid div",
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.04,
+        },
+        "-=1"
+      );
   });
   return (
     <div id="about">
@@ -54,26 +58,76 @@ const About = () => {
       </div>
       <div className="top-grid">
         <div className="md:col-span-3">
-          <div className="noisy"></div>
-          <img src="/images/abt1.png" alt="grid-img-1" />
+          <div
+            className="noisy"
+            style={{
+              backgroundImage: `url(${
+                import.meta.env.VITE_BASE_URL
+              }/images/noise.png`,
+            }}
+          ></div>
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}/images/abt1.png`}
+            alt="grid-img-1"
+          />
         </div>
         <div className="md:col-span-6">
-          <div className="noisy"></div>
-          <img src="/images/abt2.png" alt="grid-img-2" />
+          <div
+            className="noisy"
+            style={{
+              backgroundImage: `url(${
+                import.meta.env.VITE_BASE_URL
+              }/images/noise.png`,
+            }}
+          ></div>
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}/images/abt2.png`}
+            alt="grid-img-2"
+          />
         </div>
         <div className="md:col-span-3">
-          <div className="noisy"></div>
-          <img src="/images/abt5.png" alt="grid-img-3" />
+          <div
+            className="noisy"
+            style={{
+              backgroundImage: `url(${
+                import.meta.env.VITE_BASE_URL
+              }/images/noise.png`,
+            }}
+          ></div>
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}/images/abt5.png`}
+            alt="grid-img-3"
+          />
         </div>
       </div>
       <div className="bottom-grid">
         <div className="md:col-span-8">
-          <div className="noisy"></div>
-          <img src="/images/abt3.png" alt="grid-img-4" />
+          <div
+            className="noisy"
+            style={{
+              backgroundImage: `url(${
+                import.meta.env.VITE_BASE_URL
+              }/images/noise.png`,
+            }}
+          ></div>
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}/images/abt3.png`}
+            alt="grid-img-4"
+          />
         </div>
         <div className="md:col-span-4">
-          <div className="noisy"></div>
-          <img src="/images/abt4.png" alt="grid-img-5" />
+          <div
+            className="noisy"
+            style={{
+              backgroundImage: `url(${
+                import.meta.env.VITE_BASE_URL
+              }/images/noise.png`,
+            }}
+          ></div>
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}/images/abt4.png`}
+            alt="grid-img-5"
+          />
         </div>
       </div>
     </div>

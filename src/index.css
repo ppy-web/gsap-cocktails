@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
-:root {
-  /* 注入 VITE_BASE_URL 到 CSS 变量 */
-  --vite-base-url: #{import.meta.env.VITE_BASE_URL};
-}
 @import "tailwindcss";
 
 @font-face {
